@@ -83,11 +83,7 @@ function getNivelImc(imc) {
   if (imc < 18.5) return nivel[0];
 }
 
-function getImc(peso, altura) {
-  const imc = peso / altura ** 2;
-  return imc.toFixed(2);
-}
-
+const getImc = (peso, altura) => (peso / (altura ** 2)).toFixed(2);
 
 function criaP() {
   const p = document.createElement('p');
@@ -111,4 +107,10 @@ function setResultado(msg, isValid) {
 }
 
 
+const menuButton = document.querySelector('.menu-button');
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+menuButton.addEventListener('click', function() {
+  dropdownMenu.classList.toggle('active');
+});
 
